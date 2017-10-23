@@ -1,0 +1,67 @@
+<html>
+	<head>
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous">
+		</script>
+	</head>
+	
+	<body>
+		<div class="jumbotron jumbotron-fluid">
+		  <div class="container">
+    			<h1 class="display-3">Marca de Roupa Suprem@</h1>
+    			<p class="lead">Teste do filtro de medidas do ecommerce.</p>
+
+		 <!--div class="form-control"-->
+			<h3>Digite em cm</h3>
+  				<label>Digite a medida do seu pescoco:</label>
+  				<input type="text" class="form-control" id="neck">
+				<label>Digite a medida do seu comprimento:</label>
+  				<input type="text" class="form-control" id="height">
+				<label>Digite a medida do torax:</label>
+  				<input type="text" class="form-control" id="chest">
+			<br />
+			<br />
+			
+			<button  id="btnSupremo" class="btn btn-primary btn-lg">Checar tamanho</button>
+			</div>
+		</div>
+		<script>
+			$("#btnSupremo").click(function() {
+				var size = discoverMySize();      
+				alert("O tamanho ideal para o cliente e: "+size);
+			});
+		function discoverMySize(){
+			var neck = document.getElementById('neck').value;
+			var height = document.getElementById('height').value;
+			var chest = document.getElementById('chest').value;
+
+			if(neck<= 39 && chest < 104 && height <= 69){
+				return 'P';
+			}else if(neck <= 40 && chest < 108  && height <=70){
+				return 'M';
+			}else{
+				return 'G';
+			}
+
+	//		return size;
+			}
+		</script>
+
+	<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous">
+	</script>
+
+	</body>
+</html>
